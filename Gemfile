@@ -1,12 +1,11 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-# Core Jekyll dependency
-gem "jekyll", "~> 4.4.1"
+gem "jekyll", "~> 3.9.3"
+gem "rexml"
+gem "webrick"
+gem "kramdown-parser-gfm"
 
-# Set up the theme
-gem "minimal-mistakes-jekyll"
-
-# Plugins
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
+  gem 'jekyll-paginate'
+  gem 'jekyll-sitemap'
 end
