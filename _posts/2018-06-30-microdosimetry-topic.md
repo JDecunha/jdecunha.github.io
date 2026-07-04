@@ -1,8 +1,8 @@
 ---
-title: 'Demo Post'
+title: 'Computational Microdosimetry'
 date: 2018-06-30 00:00:00
 description: Board is a stylish full-width masonry grid theme. Made for designers, artists, photographers and developers to show off their best work.
-featured_image: '/images/IVBT-Research/Cath1.jpg'
+featured_image: '/images/Microdosimetry-Research/Microdosimetry2.jpg'
 category: research
 ---
 

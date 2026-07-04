@@ -41,18 +41,33 @@ pagination:
 </section>
 
 </div>
-
 <style>
-@media (min-width: 768px) {
-    .three-item-grid-override .listing-item {
-        width: 33.333% !important;
-    }
+/* 1. Container: Centered naturally, reduced top padding (20px), NO negative margins */
+.three-item-grid-override .listing-wrap { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; align-items: center !important; margin: 0 auto !important; padding: 20px 0 0 0 !important; width: 100% !important; }
+.three-item-grid-override .listing-wrap::before, .three-item-grid-override .listing-wrap::after { display: none !important; }
+
+/* 2. Desktop: 3-Column Math with physical margins */
+/* Math: Each card is 33.333% wide minus 40px. We then add 20px left margin + 20px right margin. 
+   Total footprint = exactly 33.333%, forcing perfect centering. */
+@media (min-width: 992px) { 
+    .three-item-grid-override .listing-item { flex: 0 0 calc(33.3333% - 40px) !important; max-width: calc(33.3333% - 40px) !important; width: calc(33.3333% - 40px) !important; float: none !important; margin: 0 20px 40px 20px !important; padding: 0 !important; } 
+    .three-item-grid-override .listing-item__link { aspect-ratio: 1 / 1 !important; }
 }
-@media (max-width: 767px) {
-    .three-item-grid-override .listing-item {
-        width: 100% !important;
-    }
+
+/* 3. Mobile / Snapped Window: Strict 1-Column */
+@media (max-width: 991px) { 
+    .three-item-grid-override .listing-item { flex: 0 0 100% !important; max-width: 100% !important; width: 100% !important; float: none !important; margin: 0 0 40px 0 !important; padding: 0 !important; } 
+    .three-item-grid-override .listing-item__link { aspect-ratio: 16 / 9 !important; }
 }
+
+/* 4. Link & Image Boundaries */
+.three-item-grid-override .listing-item__link { display: block !important; position: relative !important; width: 100% !important; overflow: hidden !important; border-radius: 8px !important; }
+.three-item-grid-override .listing-item__image, .three-item-grid-override .listing-item__image img { width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; margin: 0 !important; padding: 0 !important; }
+
+/* 5. Hover Overlay (Color tint ONLY, Opacity reduced to 0.2) */
+.three-item-grid-override .listing-item__info { display: none !important; } 
+.three-item-grid-override .listing-item__content { opacity: 0 !important; visibility: hidden !important; transition: all 0.2s ease-in-out !important; background: rgba(237, 230, 230, 0.2) !important; }
+.three-item-grid-override .listing-item__link:hover .listing-item__content { opacity: 1 !important; visibility: visible !important; }
 </style>
 
 {% if paginator.total_pages > 1 %}
