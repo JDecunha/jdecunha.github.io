@@ -7,6 +7,8 @@ pagination:
   category: research
 ---
 
+<div class="three-item-grid-override">
+
 <section class="listing">
 
 	<div class="content-wrap listing-wrap">
@@ -37,6 +39,21 @@ pagination:
 	</div>
 
 </section>
+
+</div>
+
+<style>
+@media (min-width: 768px) {
+    .three-item-grid-override .listing-item {
+        width: 33.333% !important;
+    }
+}
+@media (max-width: 767px) {
+    .three-item-grid-override .listing-item {
+        width: 100% !important;
+    }
+}
+</style>
 
 {% if paginator.total_pages > 1 %}
 
