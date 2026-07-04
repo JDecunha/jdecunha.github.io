@@ -13,9 +13,9 @@ menu_settings:
     - title: 'CV'
       url: '/CV'
     - title: 'Research'
-      url: '/Research'
+      url: '/research/'
     - title: 'Personal'
-      url: '/Personal'
+      url: '/personal/'
 
 footer_settings:
   footer_tagline: 

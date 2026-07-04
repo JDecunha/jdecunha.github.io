@@ -50,9 +50,12 @@ sass:
 
 plugins:
   - jekyll-sitemap
+  - jekyll-paginate-v2
 
-#paginate: 10
-#paginate_path: "/blog/page:num/"
+pagination:
+  enabled: true
+  per_page: 9
+  # This tells the paginator to look at a page's front matter to know what to paginate!
 
 grid_alignments:
   - top

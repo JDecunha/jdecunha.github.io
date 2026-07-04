@@ -23,6 +23,6 @@ permalink: /
 
 </div>
 
-Maybe you're here because you want to [read my CV]({% link _pages/CV.md %}) or learn about my [ongoing research]()?  
+Maybe you're here because you want to [read my CV]({% link _pages/CV.md %}) or learn about my [ongoing research](/research/)?  
 
-Or, maybe you know me personally and just want to see [what I've been up to]()?
+Or, maybe you know me personally and just want to see [what I've been up to](/personal/)?
