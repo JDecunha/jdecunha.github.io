@@ -189,5 +189,3 @@ d.22) DeCunha J.M, Peeler C, Mirkovic D, Titt U, Yepes P, Newpower M, Grosshans 
 
 </style>
 
-<!-- ![](/images/demo/landscape-05.jpg) -->
-

@@ -12,6 +12,8 @@ menu_settings:
       url: '/'
     - title: 'CV'
       url: '/CV'
+    - title: 'Research'
+      url: '/Research'
     - title: 'Personal'
       url: '/Personal'
 
