@@ -55,7 +55,6 @@ plugins:
 pagination:
   enabled: true
   per_page: 9
-  # This tells the paginator to look at a page's front matter to know what to paginate!
 
 grid_alignments:
   - top
