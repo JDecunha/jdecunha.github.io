@@ -361,55 +361,46 @@
 	}
 }
 
-/* 1. Force the slide to behave as a centered container */
-.splide__slide {
-    display: flex !important;           /* Use flex to gain full control */
-    justify-content: center !important; /* Forces items to the middle horizontally */
-    align-items: center !important;     /* Forces items to the middle vertically */
-    width: 100% !important;             /* Ensures it takes full available width */
-    height: 100% !important;
+/* 1. The Wrapper: This is the ONLY thing that controls layout */
+.gallery-wrapper {
+    max-width: 800px !important;
+    margin: 0px auto !important; /* Centers the whole gallery */
+    position: relative !important; /* Arrows will anchor to this */
 }
 
-/* 2. Reset the image to prevent it from pulling left */
-.splide__slide img {
-    margin: 0 auto !important;
-    display: block !important;
-    width: auto !important;             /* Allows image to be its natural width */
-    height: auto !important;
-    max-height: 80vh !important;        /* Prevents image from being too tall */
-    object-fit: contain !important;
-}
-
-/* 1. Ensure the gallery is the anchor for the arrows */
+/* 2. The Splide container: Neutralized */
 .splide-gallery {
-    position: relative !important;
-    margin: 0px auto !important; /* This is the centering command */
+    width: 100% !important;
 }
 
-/* Position the arrows relative to the CENTER of the 600px gallery, not the edges */
-.splide-gallery .splide__arrow {
+/* 3. The Arrows: Fixed positioning relative to the wrapper */
+.gallery-wrapper .splide__arrow {
     position: absolute !important;
     top: 50% !important;
-    transform: translateY(-50%) !important;
+    /* Manual vertical centering to avoid transform conflicts */
+    margin-top: -20px !important; 
     opacity: 0.7 !important;
-    
-    /* Math: 50% is the center. 
-       We subtract 300px (half of your 600px max-width) to get to the left edge.
-       Then add/subtract a small offset (e.g., 10px) to move them in/out.
-    */
 }
 
-.splide-gallery .splide__arrow--prev {
-    left: calc(50% - 400px + 10px) !important; 
+.gallery-wrapper .splide__arrow--prev {
+    left: 10px !important;
 }
 
-.splide-gallery .splide__arrow--next {
-    right: calc(50% - 400px + 10px) !important;
+.gallery-wrapper .splide__arrow--next {
+    right: 10px !important;
 }
 
-/* Optional: Hide arrows on very small mobile screens to prevent overlap */
-@media (max-width: 480px) {
-    .splide-gallery .splide__arrow {
-        display: none !important; 
-    }
+/* 4. Slides: Center the image contents */
+.splide__slide {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+.splide__slide img {
+    max-height: 80vh !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
 }
