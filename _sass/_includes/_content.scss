@@ -40,6 +40,10 @@
 	@include mq(laptop) {
 		padding-bottom: 80px;
 	}
+		/* Only target sections that are inside the .single container */
+	section {
+    margin-top: -30px !important;
+	}
 
 	h1, h2, h3, h4, h5, h6, p, ul, ol {
 		margin-left: auto;
