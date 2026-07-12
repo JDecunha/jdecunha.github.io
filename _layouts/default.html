@@ -62,7 +62,9 @@
 	<!-- Extra Header JS Code -->
 	{{ site.data.settings.advanced_settings.header_js }}
 	{% endif %}
-	
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 </head>
 
 
@@ -100,6 +102,51 @@
 	<!-- Extra Footer JS Code -->
 	{{ site.data.settings.advanced_settings.footer_js }}
 	{% endif %}
+
+	<script>
+	// Watch the site for any new HTML being added by the Jekyll theme
+	const observer = new MutationObserver(function(mutations) {
+	    var splides = document.querySelectorAll('.splide:not(.is-initialized)');
+	    
+	    if (splides.length > 0 && typeof Splide !== 'undefined') {
+	        splides.forEach(function(el) {
+	            // Reverting to the absolute basic tutorial configuration!
+	            // ... inside the MutationObserver and the DOMContentLoaded block
+				new Splide(el, {
+				    type       : 'slide',     // Use 'slide' instead of 'loop' for better stability
+				    perPage    : 1,           
+				    pagination : true,        
+				    arrows     : true,        
+				    drag       : true,
+				    autoHeight : true,
+				    focus      : 'center',    // This is the magic fix for centering
+				    gap        : '1rem',      // Adds a small space between slides if you have more than 1
+				}).mount();
+	        });
+	    }
+	});
+
+	// Start watching the page
+	observer.observe(document.body, { childList: true, subtree: true });
+
+	// Also run once normally on direct visits
+	document.addEventListener('DOMContentLoaded', function() {
+	    var splides = document.querySelectorAll('.splide:not(.is-initialized)');
+	    splides.forEach(function(el) {
+	        // ... inside the MutationObserver and the DOMContentLoaded block
+			new Splide(el, {
+			    type       : 'slide',     // Use 'slide' instead of 'loop' for better stability
+			    perPage    : 1,           
+			    pagination : true,        
+			    arrows     : true,        
+			    drag       : true,
+			    autoHeight : true,
+			    focus      : 'center',    // This is the magic fix for centering
+			    gap        : '1rem',      // Adds a small space between slides if you have more than 1
+			}).mount();
+	    });
+	});
+	</script>
 
 
 </body>
