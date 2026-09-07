@@ -1,7 +1,7 @@
 ---
 title: Royal Basin (below 5000 ft)
 date: 2025-06-28 10:00:00
-featured_image: '/images/2025/June/2/2.jpg'
+featured_image: '/images/2025/June/2/1.jpg'
 category: personal
 layout: post
 ---
