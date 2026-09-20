@@ -1,7 +1,7 @@
-site: Board Jekyll Theme
-
-url: 
-baseurl: 
+title: "Joseph M. DeCunha"
+description: "Personal website of Joseph M. DeCunha, PhD"
+url: "https://josephdecunha.com"
+author: "Joseph M. DeCunha"
 
 collections:
   pages:
@@ -49,6 +49,7 @@ sass:
   style: compressed
 
 plugins:
+  - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-paginate-v2
 
